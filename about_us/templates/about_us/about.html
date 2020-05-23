@@ -1,0 +1,39 @@
+{% extends 'home/base.html' %}
+
+{% block content %}
+
+{% load static %}
+
+<div class="container">
+<div class="row justify-content-md-center">
+
+{% for about in about %}
+
+  <div class="col-sm-4">
+    {{ about.info|safe }}
+    <a role="button" href="{{about.resume.url}}" class="btn btn-success">Download Resume</a>
+    </div>
+
+
+  <div class="col-md-auto">
+
+    <img src="{{about.img.url}}">
+
+  </div>
+</div>
+<br>
+<br>
+<br>
+<div class="col">
+
+  {{ about.bio|safe }}
+</div>
+</div>
+
+
+
+{% endfor %}
+<br>
+<br>
+
+{% endblock %}
